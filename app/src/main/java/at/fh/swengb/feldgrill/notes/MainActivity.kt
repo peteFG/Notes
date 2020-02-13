@@ -13,19 +13,20 @@ import retrofit2.Response
 class MainActivity : AppCompatActivity() {
 
     companion object {
-    val ACCESS_TOKEN = "ACCESS_TOKEN"
+    val KEY_ACCESS_TOKEN = "KEY_ACCESS_TOKEN"
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
         val sharedPreferences = getSharedPreferences(packageName, Context.MODE_PRIVATE)
 
-        if(sharedPreferences.getString(ACCESS_TOKEN,null)!= null){
+        if(sharedPreferences.getString(KEY_ACCESS_TOKEN,null)!= null){
 
             val intent = Intent(this, NoteListActivity::class.java)
             startActivity(intent)
-
+            finish()
         }
 
         save_login.setOnClickListener {
@@ -36,9 +37,10 @@ class MainActivity : AppCompatActivity() {
 
                 loginProcess(auth,
                     success = {
-                        sharedPreferences.edit().putString(ACCESS_TOKEN, it.token).apply()
+                        sharedPreferences.edit().putString(KEY_ACCESS_TOKEN, it.token).apply()
                         val intent = Intent(this, NoteListActivity::class.java)
                         startActivity(intent)
+                        finish()
 
                     },
                     error = {

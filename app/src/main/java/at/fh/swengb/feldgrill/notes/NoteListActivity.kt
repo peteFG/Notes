@@ -15,7 +15,7 @@ import java.util.*
 
 class NoteListActivity : AppCompatActivity() {
     companion object{
-        val ACCESS_TOKEN = "ACCESS_TOKEN"
+        val KEY_ACCESS_TOKEN = "KEY_ACCESS_TOKEN"
         val LAST_SYNC = "LAST_SYNC"
         val NOTE_ID = "NOTE_ID"
         val NEW_NOTE_RESULT = 0
@@ -33,7 +33,7 @@ class NoteListActivity : AppCompatActivity() {
         setContentView(R.layout.activity_note_list)
 
         val sharedPreferences = getSharedPreferences(packageName, Context.MODE_PRIVATE)
-        val accessToken = sharedPreferences.getString(ACCESS_TOKEN, null)
+        val accessToken = sharedPreferences.getString(KEY_ACCESS_TOKEN, null)
         val lastSync = sharedPreferences.getLong(LAST_SYNC, 0)
         if (accessToken != null){
 
@@ -43,11 +43,11 @@ class NoteListActivity : AppCompatActivity() {
                 success = {
                     it.notes.map { NoteRepository.addNote(this, it) }
                     sharedPreferences.edit().putLong(LAST_SYNC, it.lastSync).apply()
-                    noteAdapter.updateList(NoteRepository.getNotesAll(this))
+                    noteAdapter.updateList(NoteRepository.getAllNotes(this))
                 },
                 error = {
                     Log.e("Error", it)
-                    noteAdapter.updateList(NoteRepository.getNotesAll(this))
+                    noteAdapter.updateList(NoteRepository.getAllNotes(this))
                 })
             note_recycler_view.layoutManager = StaggeredGridLayoutManager(2,1)
             note_recycler_view.adapter = noteAdapter
@@ -60,7 +60,7 @@ class NoteListActivity : AppCompatActivity() {
 
         if (requestCode == NEW_NOTE_RESULT  && resultCode == Activity.RESULT_OK){
 
-            noteAdapter.updateList(NoteRepository.getNotesAll(this))
+            noteAdapter.updateList(NoteRepository.getAllNotes(this))
             note_recycler_view.layoutManager = StaggeredGridLayoutManager(2,1)
             note_recycler_view.adapter = noteAdapter
         }
@@ -78,14 +78,20 @@ class NoteListActivity : AppCompatActivity() {
                 val sharedPreferences = getSharedPreferences(packageName, Context.MODE_PRIVATE)
                 sharedPreferences.edit().clear().apply()
                 NoteRepository.clearDb(this)
+
+                val intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
                 finish()
-                true}
+
+                true
+            }
             R.id.new_note -> {
                 val uuidString = UUID.randomUUID().toString()
                 val intent = Intent(this, NewNote::class.java)
                 intent.putExtra(NOTE_ID, uuidString)
                 startActivityForResult(intent, NEW_NOTE_RESULT)
-                true}
+                true
+            }
             else -> super.onOptionsItemSelected(item)
         }
     }

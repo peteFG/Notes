@@ -14,8 +14,8 @@ interface NoteDao {
     fun findNoteById(note_id: String):Note
 
     @Query("SELECT * FROM Note")
-    fun getNotesAll():List<Note>
+    fun getAllNotes():List<Note>
 
     @Query("DELETE FROM Note")
-    fun deleteAllLessonNote()
+    fun deleteAllNotes()
 }

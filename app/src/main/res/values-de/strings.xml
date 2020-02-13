@@ -9,5 +9,5 @@
     <string name="note_title">Titel</string>
     <string name="note_content">Inhalt</string>
     <string name="text_required">Geben Sie Text in zumindest einem der Felder ein!</string>
-    <string name="login_username_password_required">Benutzername and Passwort erforderlich!</string>
+    <string name="login_username_password_required">Korrekter Benutzername and Passwort erforderlich!</string>
 </resources>

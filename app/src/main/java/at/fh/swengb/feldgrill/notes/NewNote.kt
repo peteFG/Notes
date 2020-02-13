@@ -13,7 +13,7 @@ import kotlinx.android.synthetic.main.activity_new_note.*
 class NewNote : AppCompatActivity() {
 
     companion object {
-        val ACCESS_TOKEN = "ACCESS_TOKEN"
+        val KEY_ACCESS_TOKEN = "KEY_ACCESS_TOKEN"
         val NEW_NOTE_RESULT = "NEW_NOTE_RESULT"
     }
 
@@ -24,7 +24,7 @@ class NewNote : AppCompatActivity() {
         val noteId: String? = intent.getStringExtra(NoteListActivity.NOTE_ID)
 
         if(noteId != null){
-            // val note:Note?
+
             val note:Note? = NoteRepository.getNoteById(this, noteId)
 
                 new_content.setText(note?.text)
@@ -39,7 +39,7 @@ class NewNote : AppCompatActivity() {
 
                 val extra: String? = intent.getStringExtra(NoteListActivity.NOTE_ID)
                 val sharedPreferences = getSharedPreferences(packageName, Context.MODE_PRIVATE)
-                val accessToken = sharedPreferences.getString(ACCESS_TOKEN, null)
+                val accessToken = sharedPreferences.getString(KEY_ACCESS_TOKEN, null)
 
                 if ((new_title.text.toString().isNotEmpty()|| new_content.text.toString().isNotEmpty()) &&
                     (extra != null) &&

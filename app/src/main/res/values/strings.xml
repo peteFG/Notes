@@ -9,5 +9,5 @@
     <string name="note_title">Title</string>
     <string name="note_content">Content</string>
     <string name="text_required">Enter some text in at least one of the fields!</string>
-    <string name="login_username_password_required">Username and password required!</string>
+    <string name="login_username_password_required">Valid username and password required!</string>
 </resources>

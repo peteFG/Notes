@@ -60,13 +60,13 @@ object NoteRepository {
         return db.noteDao.findNoteById(id)
     }
 
-    fun getNotesAll (context: Context):List<Note> {
+    fun getAllNotes (context: Context):List<Note> {
         val db = NoteDB.getDatabase(context)
-        return db.noteDao.getNotesAll()
+        return db.noteDao.getAllNotes()
     }
 
     fun clearDb (context: Context) {
         val db = NoteDB.getDatabase(context)
-        return db.noteDao.deleteAllLessonNote()
+        db.noteDao.deleteAllNotes()
     }
 }
