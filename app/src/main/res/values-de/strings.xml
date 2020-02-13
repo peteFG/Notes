@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Notizen</string>
+    <string name="login">Einloggen</string>
+    <string name="username">Benutzername</string>
+    <string name="password">Passwort</string>
+    <string name="new_note">Neu</string>
+    <string name="logout">Ausloggen</string>
+    <string name="save">Speichern</string>
+    <string name="note_title">Titel</string>
+    <string name="note_content">Inhalt</string>
+    <string name="text_required">Geben Sie Text in zumindest einem der Felder ein!</string>
+    <string name="login_username_password_required">Benutzername and Passwort erforderlich!</string>
+</resources>

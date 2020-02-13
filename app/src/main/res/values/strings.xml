@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Notes</string>
+    <string name="login">Login</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="new_note">New</string>
+    <string name="logout">Logout</string>
+    <string name="save">Save</string>
+    <string name="note_title">Title</string>
+    <string name="note_content">Content</string>
+    <string name="text_required">Enter some text in at least one of the fields!</string>
+    <string name="login_username_password_required">Username and password required!</string>
+</resources>
