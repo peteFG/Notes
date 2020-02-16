@@ -25,7 +25,6 @@ abstract class NoteDB : RoomDatabase() {
                 .fallbackToDestructiveMigration()
                 .allowMainThreadQueries()
                 .build()
-
         }
     }
 }

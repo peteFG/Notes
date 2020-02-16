@@ -31,9 +31,17 @@ class MainActivity : AppCompatActivity() {
 
         save_login.setOnClickListener {
 
-            if(username_login.text != null && password_login.text != null) {
+            val usernameString = main_username.text.toString()
+            val passwordString = main_password.text.toString()
 
-                val auth = AuthRequest(username_login.text.toString(), password_login.text.toString())
+            if (usernameString.isEmpty() || passwordString.isEmpty()) {
+
+                Toast.makeText(this, getString(R.string.login_username_password_empty) , Toast.LENGTH_SHORT).show()
+
+            }
+            else {
+
+                val auth = AuthRequest(usernameString, passwordString)
 
                 loginProcess(auth,
                     success = {
@@ -64,11 +72,12 @@ class MainActivity : AppCompatActivity() {
             override fun onResponse(call: Call<AuthResponse>, response: Response<AuthResponse>) {
                 val responseBody = response.body()
                 if (response.isSuccessful && responseBody != null) {
+
                     success(responseBody)
                 }
                 else {
-                    error("There was an error logging in")
 
+                    error("There was an error logging in")
                 }
 
             }

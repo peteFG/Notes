@@ -5,9 +5,12 @@
     <string name="password">Password</string>
     <string name="new_note">New</string>
     <string name="logout">Logout</string>
+    <string name="sync">Sync</string>
     <string name="save">Save</string>
     <string name="note_title">Title</string>
     <string name="note_content">Content</string>
     <string name="text_required">Enter some text in at least one of the fields!</string>
     <string name="login_username_password_required">Valid username and password required!</string>
+    <string name="login_username_password_empty">Username or password can not be empty!</string>
+    <string name="note_up_download_failed">Unable to synchronise notes with the Database. Connect to the internet and click the Sync-Button at the top to do this!</string>
 </resources>

@@ -19,7 +19,7 @@ class NoteAdapter(val clickListener: (note: Note) -> Unit): RecyclerView.Adapter
     }
 
     override fun getItemCount(): Int {
-        return noteList.count()
+        return noteList.size
     }
 
     override fun onBindViewHolder(holder: NoteViewHolder, position: Int) {
@@ -35,6 +35,7 @@ class NoteAdapter(val clickListener: (note: Note) -> Unit): RecyclerView.Adapter
 
 class NoteViewHolder(itemView: View, val clickListener: (note: Note) -> Unit): RecyclerView.ViewHolder(itemView) {
     fun bindItem(note: Note) {
+
         itemView.item_note_title.text = note.title
         itemView.item_note_content.text = note.text
 

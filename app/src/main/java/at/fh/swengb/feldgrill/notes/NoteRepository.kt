@@ -29,8 +29,8 @@ object NoteRepository {
         })
     }
 
-    fun uploadNote (token: String, note2Upload: Note, success: (note: Note)->Unit, error: (errorMessage: String)->Unit){
-        NoteApi.retrofitService.addOrUpdateNote(token, note2Upload).enqueue(object :
+    fun uploadNote (token: String, noteToUpload: Note, success: (note: Note)->Unit, error: (errorMessage: String)->Unit){
+        NoteApi.retrofitService.addOrUpdateNote(token, noteToUpload).enqueue(object :
             Callback<Note> {
 
             override fun onFailure(call: Call<Note>, t: Throwable) {

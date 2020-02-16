@@ -5,9 +5,12 @@
     <string name="password">Passwort</string>
     <string name="new_note">Neu</string>
     <string name="logout">Ausloggen</string>
+    <string name="sync">Sync</string>
     <string name="save">Speichern</string>
     <string name="note_title">Titel</string>
     <string name="note_content">Inhalt</string>
     <string name="text_required">Geben Sie Text in zumindest einem der Felder ein!</string>
     <string name="login_username_password_required">Korrekter Benutzername and Passwort erforderlich!</string>
+    <string name="login_username_password_empty">Benutzername oder Passwort darf nicht leer sein!</string>
+    <string name="note_up_download_failed">Fehler beim Synchronisieren der Notizen. Verbinden Sie sich hierfür mit dem Internet und drücken Sie den Sync-Knopf im Menü.</string>
 </resources>

@@ -7,39 +7,39 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/login_text"
+        android:id="@+id/main_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="@string/login"
-        android:textSize="36sp"
+        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/username_login"
+        android:id="@+id/main_username"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
         android:ems="10"
         android:hint="@string/username"
         android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="@+id/login_text"
-        app:layout_constraintStart_toStartOf="@+id/login_text"
-        app:layout_constraintTop_toBottomOf="@+id/login_text" />
+        app:layout_constraintEnd_toEndOf="@+id/main_login"
+        app:layout_constraintStart_toStartOf="@+id/main_login"
+        app:layout_constraintTop_toBottomOf="@+id/main_login" />
 
     <EditText
-        android:id="@+id/password_login"
+        android:id="@+id/main_password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:ems="10"
         android:hint="@string/password"
         android:inputType="textPassword"
-        app:layout_constraintEnd_toEndOf="@+id/username_login"
-        app:layout_constraintStart_toStartOf="@+id/username_login"
-        app:layout_constraintTop_toBottomOf="@+id/username_login" />
+        app:layout_constraintEnd_toEndOf="@+id/main_username"
+        app:layout_constraintStart_toStartOf="@+id/main_username"
+        app:layout_constraintTop_toBottomOf="@+id/main_username" />
 
     <Button
         android:id="@+id/save_login"
@@ -49,8 +49,8 @@
         android:backgroundTint="@color/colorPrimary"
         android:text="@string/login"
         android:textColor="@color/colorButtonText"
-        app:layout_constraintEnd_toEndOf="@+id/password_login"
-        app:layout_constraintStart_toStartOf="@+id/password_login"
-        app:layout_constraintTop_toBottomOf="@+id/password_login" />
+        app:layout_constraintEnd_toEndOf="@+id/main_password"
+        app:layout_constraintStart_toStartOf="@+id/main_password"
+        app:layout_constraintTop_toBottomOf="@+id/main_password" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
